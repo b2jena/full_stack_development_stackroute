@@ -1,0 +1,49 @@
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <script>
+        function myFunction() {
+            var x;
+            var d = new Date().getDay();
+            switch (d) {
+                case 0:
+                    x = "Today is's Sunday";
+                    break;
+                case 1:
+                    x = "Today is's Monday";
+                    break;
+
+                case 2:
+                    x = "Today is's Tuesday";
+                    break;
+                case 3:
+                    x = "Today is's Wednesday";
+                    break;
+
+                case 4:
+                    x = "Today is's Tur";
+                    break;
+                case 5:
+                    x = "Today is's Fri";
+                    break;
+
+                case 6:
+                    x = "Today is's Saturday";
+                    break;
+
+            }
+            document.getElementById("myDay").innerHTML = x;
+
+        }
+    </script>
+    <p></p>Click the booton to display today </p>
+    <button onclick="myFunction()"> ToDay </button>
+    <p id="myDay">
+    </p>
+</body>
+
+</html>
