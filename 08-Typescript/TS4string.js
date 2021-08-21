@@ -1,0 +1,16 @@
+var name1 = "Typescript Programming";
+var site = "https://www.cgi.com";
+console.log(name1);
+console.log(site);
+var str = "Hello Typescript";
+console.log(str.charAt(0));
+console.log(str.charAt(2));
+console.log(name1.concat(site));
+var s1 = "Apple, Banana, Orange";
+var s2 = ',';
+console.log(s1.split(s2));
+console.log(s1.split(',', 2));
+console.log(s1.split(',', 1));
+var str4 = "Hello TS";
+console.log(str4.toLowerCase());
+console.log(str4.toUpperCase());
