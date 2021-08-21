@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--You can use the latitude and longitude information to 
+display the location information in a map. You can use a 
+map service to display the information and a popular map 
+service is Google Maps API. -->
+<html>
+ <head>
+  <title>Geolocation Map</title>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script>
+   function getLocation()
+   {
+    if(navigator.geolocation)
+    {
+     navigator.geolocation.getCurrentPosition(position_success, position_error, { 
+                          maximumAge: 10000, 
+                          timeout: 20000, 
+                          enableHighAccuracy: true  }
+    );
+    }
+    else
+    {
+     document.getElementById("result").innerHTML = "Your browser does not support Geolocation";
+    }
+   }
+   function position_success(position)
+   {
+    //var myPoint = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+    var myPoint = new google.maps.LatLng(40.79,-73.95);
+    var mapProp = {
+     center:myPoint,
+     zoom:9,
+     mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("mapArea"),mapProp);
+    var marker = new google.maps.Marker({
+    position:myPoint,
+    });
+   marker.setMap(map);
+   }
+   function position_error(error)
+   {
+    var message;
+    switch(error.code)
+    {
+     case 1:
+     message = "User denies permission to access his information";
+     break;
+     case 2: 
+     message = "Position could not be retrieved";
+    break;
+     case 3:
+    message = "Geolocation timed out";
+    break;
+     default:
+    message: "Position information is not available";
+    break;
+    }
+     alert(message);
+   }
+  </script>
+ </head>
+ <body>
+  <button id="location" onclick="getLocation();">Find Location</button><br /><br />
+  <div id="mapArea" style="height:500px;width:500px;"></div><br />
+  <div id="result"></div>
+ </body>
+</html>

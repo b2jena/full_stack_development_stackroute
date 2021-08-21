@@ -1,0 +1,30 @@
+<!-- The <meter> element is used to display a measurement on a
+ known scale. You can display your hard disk usage or 
+ percentage of students passed in a class using the <meter>
+  element. The color of the meter bar depends on the 
+  measurement you display. The measurement can fall in
+   any of the three categories: low, medium or high. 
+   The low category will be shown in red color, medium 
+   in yellow color and high in green color. You can add 
+   the min and max attributes to set the minimum and maximum
+    values on the  scale -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meter Example</title>
+    <style>
+        meter {
+            width: 80%;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Low: <meter value="20" min="0" max="100" low="25" high="75" optimum="100"></meter></p>
+    <p>Medium: <meter value="50" min="0" max="100" low="25" high="75" optimum="100"></meter></p>
+    <p>High: <meter value="80" min="0" max="100" low="25" high="75" optimum="100"></meter></p>
+</body>
+
+</html>
