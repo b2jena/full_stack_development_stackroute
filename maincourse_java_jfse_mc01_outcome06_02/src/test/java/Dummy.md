@@ -1,0 +1,1 @@
+**This file is created to maintain the maven structure in Gitlab and can be deleted!**
